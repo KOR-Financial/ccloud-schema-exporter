@@ -25,6 +25,7 @@ func GetFlags() {
 	flag.StringVar(&SchemaLoadType, "schemaLoad", "", "Schema Type for the load. Currently supported: AVRO")
 	flag.IntVar(&HttpCallTimeout, "timeout", 60, "Timeout, in seconds, to use for all REST calls with the Schema Registries")
 	flag.IntVar(&ScrapeInterval, "scrapeInterval", 60, "Amount of time ccloud-schema-exporter will delay between schema sync checks in seconds")
+	flag.IntVar(&timeoutCall, "timeoutCall", 2, "Timeout, in seconds, to use for all REST calls with the Schema Registries")
 	flag.StringVar(&PathToWrite, "localPath", "",
 		"Optional custom path for local functions. This must be an existing directory structure.")
 	flag.BoolVar(&WithMetrics, "withMetrics", false, "Exposes metrics for the application in Prometheus format on :9020/metrics")

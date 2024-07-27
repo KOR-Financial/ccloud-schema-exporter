@@ -111,7 +111,7 @@ func (src *SchemaRegistryClient) GetSubjectsWithVersions(chanY chan<- map[string
 			The idea being that if one SR instance can handle the load, a cluster should be able to handle it
 			even more easily. During testing, it was found that 2ms is an ideal delay for best sync performance.
 		*/
-		time.Sleep(time.Duration(500) * time.Millisecond)
+		time.Sleep(time.Duration(timeoutCall) * time.Millisecond)
 		go src.GetVersions(s, aChan, &aGroup, deleted)
 	}
 	go func() {
