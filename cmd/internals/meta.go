@@ -35,6 +35,7 @@ var AllowList StringArrayFlag
 var DisallowList StringArrayFlag
 var ReferenceSeparator = "=====References====="
 var SchemaLoadType string
+var timeoutCall int
 
 // Define RunMode Enum
 type RunMode int

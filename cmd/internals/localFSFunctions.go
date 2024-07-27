@@ -33,7 +33,7 @@ func WriteToFS(srcClient *SchemaRegistryClient, definedPath string, workingDirec
 		for _, v := range srcVersions {
 			aGroup.Add(1)
 			go writeSchemaLocally(srcClient, definedPath, srcSubject, v, &aGroup)
-			time.Sleep(time.Duration(1) * time.Millisecond)
+			time.Sleep(time.Duration(timeoutCall) * time.Millisecond)
 		}
 	}
 	aGroup.Wait()
